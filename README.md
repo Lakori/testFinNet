@@ -63,8 +63,6 @@ serverless offline
 npx cypress open
 ```
 
-2. Open tests
-
 1. In opened window click on E2E Testing
 2. Click Start E2E Testing in 'chosen browser'
 3. In opened window click on logination.cy.ts to check tests for logination
