@@ -40,7 +40,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 6
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('Empty valeus', () => {
         const first = "";
@@ -65,7 +65,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 7
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('Without token', () => {
         const first = 400;
@@ -90,7 +90,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 8
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('With wrong token', () => {
         const first = 400;
@@ -203,7 +203,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 9
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('Empty JSON object in the body', () => {
         const statusCode = 500;
@@ -222,7 +222,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 10
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('Loss of precision ', () => {
         const first = 0.1;
@@ -245,7 +245,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 11
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     // BUG even in cypress!! 9999999999999999 + 0 not equal 10000000000000000
     it('Big numbers', () => {
@@ -269,7 +269,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 12
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('Letters in values', () => {
         const first = "0xff";
@@ -292,7 +292,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 13
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('Unlimited 0', () => {
         const first = "000000.1";
@@ -315,7 +315,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 14
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('Dot before number', () => {
         const first = ".1";
@@ -357,7 +357,7 @@ describe('requests to sumaction endpoint', () => {
 
     // BUG ID 15
     // more information in bugReports.txt 
-    // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+    // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
     // Test failed
     it('Spaces in values', () => {
         const first = " ";

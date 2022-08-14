@@ -7,7 +7,8 @@ This repo contains code for a QA challenge for company io FinNet from Broit Anas
 ### Bug Reports and Check List
 
 1. Bug Reports located in bugReports.txt file in the root of the project
-2. Check List located on this link https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+2. Check List located on this link 
+https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
 
     
 

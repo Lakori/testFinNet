@@ -35,7 +35,7 @@ describe('requests to logination endpoint', () => {
 
   // BUG ID 2 
   // more information in bugReports.txt
-  // in check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+  // in check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
   // Test failed
   it('Valid username and invalid password', () => {
     const login = "bob";
@@ -56,7 +56,7 @@ describe('requests to logination endpoint', () => {
 
   // BUG ID 3 
   // more information in bugReports.txt
-  // in check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+  // in check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
   // Test failed
   it('Valid username and empty password', () => {
     const login = "bob";
@@ -126,7 +126,7 @@ describe('requests to logination endpoint', () => {
 
   // BUG ID 4 
   // more information in bugReports.txt 
-  // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+  // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
   // Test failed
   it('Without password key', () => {
     const login = "bob";
@@ -157,7 +157,7 @@ describe('requests to logination endpoint', () => {
   })
 
   //Test Failed
-  // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+  // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
   // NO Bug report because cross site scripting didn't work
   // BUG ID 2 for invalid password
   // more information in bugReports.txt 
@@ -180,7 +180,7 @@ describe('requests to logination endpoint', () => {
 
   // BUG ID 5 
   // more information in bugReports.txt 
-  // check list https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+  // check list https://docs.google.com/spreadsheets/d/1pthPOhPSFgzqznwRNsa7tI8DewDig0TRMfikbu59FyM/edit#gid=0
   // Test failed
   it('Token change', () => {
     const login = "bob";
