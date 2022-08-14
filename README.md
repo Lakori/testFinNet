@@ -1,4 +1,3 @@
-
 # Io FinNet code example
 
 ## About
@@ -73,21 +72,28 @@ serverless offline
 
 ```
 
-  
+### Bug Reports and Check List
+
+1. Bug Reports located in bugReports.txt file in the root of the project
+2. Check List located on this link https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
+
 
 ### Running offline itnegration tests
-
-  
 
 1. Run local integration tests
 
 ```bash
 
-npm run test:offline
-
+npx cypress open
 ```
 
-  
+2. Open tests
+
+1. In opened window click on E2E Testing
+2. Click Start E2E Testing in 'chosen browser'
+3. In opened window click on logination.cy.ts to check tests for logination
+   or click on sumaction.cy.ts to check tests for sumaction.
+4. Tests will automatically start
   
 
 ## Instructions for the candidate
