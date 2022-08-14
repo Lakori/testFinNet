@@ -2,33 +2,14 @@
 
 ## About
 
-  
+This repo contains code for a QA challenge for company io FinNet from Broit Anastasiia
 
-This repo contains a example code to facilitate in the interview process.
+### Bug Reports and Check List
 
-The code should be deployable locally.
+1. Bug Reports located in bugReports.txt file in the root of the project
+2. Check List located on this link https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
 
-We expect the candidate to follow the instructions carefully, write some good automated tests to cover the expected functionality and to highlight any issues found along the way. This is a white-box testing exercise and you have full access to the code for reference.
-
-  
-
-### Built With
-
-  
-
--  [typescript](https://www.npmjs.com/package/typescript) - Typed language for application-scale
-
-JavaScript.
-
--  [serverless](https://www.npmjs.com/package/serverless) - SDK for building, deploying and managing
-
-serverless cloud services.
-
--  [cucumber.js](https://www.npmjs.com/package/@cucumber/cucumber) - Tool for running automated tests
-
-written in plain language.
-
-  
+    
 
 ## Getting Started
 
@@ -71,11 +52,6 @@ npm i
 serverless offline
 
 ```
-
-### Bug Reports and Check List
-
-1. Bug Reports located in bugReports.txt file in the root of the project
-2. Check List located on this link https://docs.google.com/spreadsheets/d/1D5EA-VY79cq_5BcVgJR4VcoDfdhV8WJsTrVN_C-I4M8/edit#gid=0
 
 
 ### Running offline itnegration tests
