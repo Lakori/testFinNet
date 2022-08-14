@@ -1,0 +1,350 @@
+Bugs Report
+*************
+Bug ID:  1
+Bug Name:  Username and password in headers
+
+URL: -
+
+Description: 
+According to the Requirements the POST request should be with two headers: username and password;
+
+Steps to reproduce:
+1. open README.md
+2. read 130 Stroke about The '`loginaction`' endpoint.
+
+
+Expected result:
+Sending username and password in body
+
+Actual result:
+Sending username and password in headers
+
+Notes: Sending the username and password in the body of the POST request is the best practice.
+*************
+
+*************
+Bug ID:  2
+Bug Name:  Pass Authentication with Invalid password 
+
+URL: http://localhost:3000/loginaction
+
+Description: When we send a request with invalid password value we still receive a response 200, 
+successfull authentication and token
+
+Steps to reproduce:
+1. Construct a POST request
+2. Add first header with key "username" and value "bob"
+3. Add second header with key "password" and value "P@55w0r" 
+4. Send a request to URL endpoint
+
+Expected result:
+unsuccessful authentication, a 401 http response, no token
+
+Actual result:
+successful authentication, a 200 http response, returned a token
+
+*************
+
+*************
+Bug ID:  3
+Bug Name:  Pass Authentication with empty password 
+
+URL: http://localhost:3000/loginaction
+
+Description: When we send a request with empty password value we still receive a response 200, 
+successfull authentication and token
+
+Steps to reproduce:
+1. Construct a POST request
+2. Add first header with key "username" and value "bob"
+3. Add second header with key "password" and empty value
+4. Send a request to URL endpoint
+
+Expected result:
+unsuccessful authentication, a 401 http response, no token
+
+Actual result:
+successful authentication, a 200 http response, returned a token
+
+*************
+*************
+Bug ID:  4
+Bug Name:  Pass Authentication without password key
+
+URL: http://localhost:3000/loginaction
+
+Description: Send a request without key password we still receive a response 200, 
+successfull authentication and token
+
+Steps to reproduce:
+1. Construct a POST request
+2. Add only one header with key "username" and value "bob"
+3. Send a request to URL endpoint
+
+Expected result:
+unsuccessful authentication, a 401 http response, no token
+
+Actual result:
+successful authentication, a 200 http response, returned a token
+
+*************
+
+*************
+Bug ID:  5
+Bug Name:  Token does not change
+
+URL: http://localhost:3000/loginaction
+
+Description: Send a request  and receive a response with successful authentication,
+token in that response is always the same.
+
+Steps to reproduce:
+1. Construct a POST request
+2. Add first header with key "username" and value "bob"
+3. Add second header with key "password" and value "P@55w0rd"
+3. Send a request to URL endpoint
+
+Expected result:
+new token every time when the authenticationis is successful
+
+Actual result:
+token always is the same - "G7T0K3N"
+
+*************
+
+*************
+Bug ID:  6
+Bug Name:  returning of summ value with empty values in request
+
+URL: http://localhost:3000/sumaction
+
+Description: when we send a request with empty values the response contains the result "0"
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create a JSON object in the body
+3. First JSON attribute contains key - "first" value - ""
+4. Second JSON attribute contains key - "second" value -  ""
+5. Send a request to URL endpoint
+
+Expected result:
+response result : null
+
+Actual result:
+response result : 0
+
+*************
+*************
+Bug ID:  7
+Bug Name:  without Token
+
+URL: http://localhost:3000/sumaction
+
+Description: when we send a request without Token in response there is a result
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create a JSON object in the body
+3. First JSON attribute contains key - "first" value - "400"
+4. Second JSON attribute contains key - "second" value -  "1"
+5. Send a request to URL endpoint
+
+Expected result:
+response result : error
+
+Actual result:
+response result : 401
+
+Notes: a 401 http response shouldn't be in result. There should be an error or message like "You are not Authorized"
+
+*************
+*************
+Bug ID:  8
+Bug Name:  wrong Token
+
+URL: http://localhost:3000/sumaction
+
+Description: when we send a request with wrong Token in response there is a result
+
+Steps to reproduce:
+1. Construct a POST request
+2. Add a header with key "token" and value "G7T0K3N1"
+3. Create a JSON object in the body
+4. First JSON attribute contains key - "first" value - "400"
+5. Second JSON attribute contains key - "second" value -  "1"
+6. Send a request to URL endpoint
+
+Expected result:
+response result : error
+
+Actual result:
+response result : 401
+
+Notes: a 401 http response shouldn't be in result. There should be an error or message like "You are not Authorized"
+
+*************
+
+
+*************
+Bug ID:  9
+Bug Name:  empty JSON object in the body
+URL: http://localhost:3000/sumaction
+
+Description: When we send a request with empty JSON object in the body, there is a 200 http response and return result null.
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create an empty JSON object in the body
+3. Send a request to URL endpoint
+
+Expected result:
+a 500 http response and error result
+
+Actual result:
+a 200 http response and result : null
+
+*************
+
+Bug ID:  10
+Bug Name:  Loss of precision 
+URL: http://localhost:3000/sumaction
+
+Description: When we send a request with  some numbers with dot there is a wrong sum
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create a JSON object in the body
+3. First JSON attribute contains key - "first" value - "0.1"
+4. Second JSON attribute contains key - "second" value -  "0.2"
+5. Send a request to URL endpoint
+
+Expected result:
+response result : 0.3
+
+Actual result:
+response result : 0.30000000000000004
+
+Notes: That happend because A number is stored in memory in its binary form. There are several methods 
+to solve it, for example method number.toFixed(n)
+
+*************
+
+*************
+
+Bug ID:  11
+Bug Name:  Big numbers
+URL: http://localhost:3000/sumaction
+
+Description: When we send a request with big numbers there is a wrong sum
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create a JSON object in the body
+3. First JSON attribute contains key - "first" value - "9999999999999999"
+4. Second JSON attribute contains key - "second" value -  "0"
+5. Send a request to URL endpoint
+
+Expected result:
+response result : 9999999999999999
+
+Actual result:
+response result : 10000000000000000
+
+Notes: Not enough memory in store for big numbers.  Should limit the field.
+
+*************
+
+*************
+
+Bug ID:  12
+Bug Name: letters in value
+URL: http://localhost:3000/sumaction
+
+Description: When we send a request with letters in value there is a sum in result
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create a JSON object in the body
+3. First JSON attribute contains key - "first" value - "0xff"
+4. Second JSON attribute contains key - "second" value -  "5"
+5. Send a request to URL endpoint
+
+Expected result:
+response result : null
+
+Actual result:
+response result : 260
+
+Notes: There are special 3 numeral systems - Hex, binary and octal numbers. Should check if the value contains letters. 
+
+*************
+
+*************
+
+Bug ID:  13
+Bug Name: Unlimited 0
+URL: http://localhost:3000/sumaction
+
+Description: When we send a request with number in value that contains unlimited 0 before the dot in response there is a sum in result
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create a JSON object in the body
+3. First JSON attribute contains key - "first" value - "000000.1"
+4. Second JSON attribute contains key - "second" value -  "5"
+5. Send a request to URL endpoint
+
+Expected result:
+response result : null
+
+Actual result:
+response result : 5.1
+
+*************
+
+
+*************
+
+Bug ID:  14
+Bug Name: Dot before number
+URL: http://localhost:3000/sumaction
+
+Description: When we send a request with number in value that contains dot without number before it in response there is a sum in result
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create a JSON object in the body
+3. First JSON attribute contains key - "first" value - ".1"
+4. Second JSON attribute contains key - "second" value -  "5"
+5. Send a request to URL endpoint
+
+Expected result:
+response result : null
+
+Actual result:
+response result : 5.1
+
+*************
+
+*************
+
+Bug ID:  15
+Bug Name: Spaces in values
+URL: http://localhost:3000/sumaction
+
+Description: When we send a request with spaces in value in response there is a sum in result
+
+Steps to reproduce:
+1. Construct a POST request
+2. Create a JSON object in the body
+3. First JSON attribute contains key - "first" value - " "
+4. Second JSON attribute contains key - "second" value -  "5"
+5. Send a request to URL endpoint
+
+Expected result:
+response result : null
+
+Actual result:
+response result : 5
+
+*************
